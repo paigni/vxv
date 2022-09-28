@@ -1,5 +1,6 @@
 import random
 
+
 class Hero:
     name = 'name'
     max_hp = 0
@@ -14,7 +15,7 @@ class Hero:
         Args:
             hero: Герой из противополежнной стороны
         """
-        if random.randint(0,100) <= hero.damage_chance :
+        if random.randint(0, 100) <= hero.damage_chance:
             hero.current_hp -= self.damage
         else:
             print("Промах")
