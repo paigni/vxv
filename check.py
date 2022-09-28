@@ -1,7 +1,7 @@
 from hero_class import Hero
 
 
-def check_hero_choice(inp: str) -> bool:
+def check_hero_choice(inp: int) -> bool:
     """
     Проверка корректности выбора пользователя
     Args:
@@ -9,9 +9,10 @@ def check_hero_choice(inp: str) -> bool:
     Returns:
         Статус проверки
     """
-    if 1 <= int(inp) <= 6:
+    if 1 >= inp >= 7:
         return True
     return False
+
 
 
 def check_choice(inp: str) -> bool:
@@ -22,6 +23,6 @@ def check_choice(inp: str) -> bool:
     Returns:
         Статус проверки
     """
-    if 1 <= int(inp) <= 3:
+    if 0 < int(inp) < 3:
         return True
     return False
