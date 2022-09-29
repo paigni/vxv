@@ -1,5 +1,3 @@
-from hero_class import Hero
-
 
 def check_hero_choice(inp: int) -> bool:
     """
@@ -24,5 +22,18 @@ def check_choice(inp: str) -> bool:
         Статус проверки
     """
     if 0 < int(inp) < 3:
+        return True
+    return False
+
+
+def check_hero_hp(hero) -> bool:
+    """
+    Проверка жив ли герой
+    Args:
+        hero: текущий монстр
+    Returns:
+        Статус проверки
+    """
+    if hero.current_hp >= 0:
         return True
     return False
