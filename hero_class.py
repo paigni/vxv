@@ -15,10 +15,11 @@ class Hero:
         Args:
             hero: Герой из противополежнной стороны
         """
-        if random.randint(0, 100) <= hero.damage_chance:
+        if random.randint(0, 100) <= self.damage_chance:
             hero.current_hp -= self.damage
+            print(f"Герою {hero.name} ,{self.damage} урона героем {self.name}")
         else:
-            print("Промах")
+            print(f"Герой {self.name} промахнулся по герою {hero.name}")
 
 
 class Penguin(Hero):
