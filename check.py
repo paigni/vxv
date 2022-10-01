@@ -37,3 +37,9 @@ def check_hero_hp(hero) -> bool:
     if hero.current_hp >= 0:
         return True
     return False
+
+
+def check_max_count(count, team_list):
+    if len(team_list) >= count:
+        return True
+    return False
