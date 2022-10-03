@@ -1,4 +1,3 @@
-
 def check_hero_choice(inp: int) -> bool:
     """
     Проверка корректности выбора пользователя
@@ -10,7 +9,6 @@ def check_hero_choice(inp: int) -> bool:
     if 1 >= inp >= 7:
         return True
     return False
-
 
 
 def check_choice(inp: str) -> bool:
@@ -39,7 +37,3 @@ def check_hero_hp(hero) -> bool:
     return False
 
 
-def check_max_count(count, team_list):
-    if len(team_list) >= count:
-        return True
-    return False
