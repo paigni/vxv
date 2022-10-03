@@ -47,30 +47,33 @@ def start_game():
         user_input = input("Выберите сторону для выбора персонажей \n "
                             "1-Первая команда \n 2-Вторая команда\n 3-Начать игру\n")
         if user_input.isdigit():
-            if int(user_input) == 3:
+            user_input = int(user_input)
+            if user_input == 3:
                 if first_team == [] or second_team == []:
                     print("Для начала игры нужно добавить героев в обе команды")
                     continue
                 else:
                     print("Игра началась")
                     break
-            elif int(user_input) == 1 or int(user_input) == 2:
+            elif user_input == 1 or user_input == 2:
                 show_heroes()
-                team_building(team=int(user_input))
+                team_building(team=user_input)
 
                 while True:
                     user_choice = input("Желаете добавить ещё игроков? 1-да, 2 - нет ")
 
-                    if user_choice.isdigit() and int(user_choice) == 2:
-                        print(f"Персонажи первой команды:")
-                        team_view(first_team)
-                        print(f"Персонажи второй команды:")
-                        team_view(second_team)
-                        break
+                    if user_choice.isdigit():
+                        user_choice = int(user_choice)
+                        if user_choice == 2:
+                            print(f"Персонажи первой команды:")
+                            team_view(first_team)
+                            print(f"Персонажи второй команды:")
+                            team_view(second_team)
+                            break
 
-                    elif user_choice.isdigit() and int(user_choice) == 1:
-                        team_building(team=int(user_input))
-                        continue
+                        elif user_choice == 1:
+                            team_building(team=int(user_input))
+                            continue
 
                     else:
                         print("Должно быть число 1 или 2")
